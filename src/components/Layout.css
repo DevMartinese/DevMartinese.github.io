@@ -355,7 +355,7 @@ body {
     padding: 0 0;
   }
   .logo-box {
-    max-width: 340px;
+    /* max-width: 340px; */
     min-height: 80px;
     padding: 24px 24px 18px 24px;
   }
