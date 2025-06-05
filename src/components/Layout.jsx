@@ -6,11 +6,13 @@ import LanguageSelector from './LanguageSelector';
 const translations = {
   es: {
     welcome: "¡Hola! Soy Gonzalo o DevMartinese. Desarrollador creativo explorando la magia entre juegos de mesa y web. Three.js + GSAP = 🎲✨",
-    usefulLinks: "Enlaces útiles"
+    usefulLinks: "Enlaces útiles",
+    moreComing: "Más experiencias próximamente"
   },
   en: {
     welcome: "Hi! I'm Gonzalo or DevMartinese. Creative developer exploring the magic between board games and web. Three.js + GSAP = 🎲✨",
-    usefulLinks: "Useful Links"
+    usefulLinks: "Useful Links",
+    moreComing: "More experiences coming soon"
   }
 };
 
@@ -27,7 +29,7 @@ const LinkIcon = () => (
 );
 
 const Layout = () => {
-  const [language, setLanguage] = useState('es');
+  const [language, setLanguage] = useState('en');
 
   return (
     <div className="layout-root">
@@ -38,7 +40,7 @@ const Layout = () => {
         <div className="welcome-card">
           <div className="welcome-header">
             <p className="welcome-main">{translations[language].welcome}</p>
-            <LanguageSelector onLanguageChange={setLanguage} />
+            <LanguageSelector onLanguageChange={setLanguage} language={language} />
           </div>
         </div>
         <div className="links-section">
@@ -58,6 +60,7 @@ const Layout = () => {
               </a>
             ))}
           </div>
+          <div className="next-experiences">{translations[language].moreComing}</div>
         </div>
       </div>
       {/* Aquí va el contenido de las páginas, si lo necesitas */}

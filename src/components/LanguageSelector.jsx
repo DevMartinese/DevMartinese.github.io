@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
-const LanguageSelector = ({ onLanguageChange }) => {
+const LanguageSelector = ({ onLanguageChange, language }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [current, setCurrent] = useState('es');
 
   const languages = [
     { code: 'es', name: 'Español' },
@@ -15,7 +14,7 @@ const LanguageSelector = ({ onLanguageChange }) => {
         onClick={() => setIsOpen(!isOpen)}
         className="language-button"
       >
-        {current.toUpperCase()}
+        {language.toUpperCase()}
       </button>
       {isOpen && (
         <div className="language-dropdown">
@@ -24,7 +23,6 @@ const LanguageSelector = ({ onLanguageChange }) => {
               key={lang.code}
               onClick={() => {
                 onLanguageChange(lang.code);
-                setCurrent(lang.code);
                 setIsOpen(false);
               }}
               className="language-option"
