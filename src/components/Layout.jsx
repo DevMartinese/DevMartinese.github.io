@@ -35,7 +35,7 @@ const Layout = () => {
     <div className="layout-root">
       <div className="layout-center">
         <div className="logo-box">
-          <span className="logo-text">DM.</span>
+          <span className="logo-text-brutal">devmartinese</span>
         </div>
         <div className="welcome-card">
           <div className="welcome-header">
