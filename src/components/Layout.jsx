@@ -2,6 +2,7 @@ import './Layout.css';
 import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import LanguageSelector from './LanguageSelector';
+import TypewriterFade from './TypewriterFade';
 
 const translations = {
   es: {
@@ -35,7 +36,7 @@ const Layout = () => {
     <div className="layout-root">
       <div className="layout-center">
         <div className="logo-box">
-          <span className="logo-text-brutal">devmartinese</span>
+          <TypewriterFade text="DEVMARTINESE" className="logo-text-brutal" />
         </div>
         <div className="welcome-card">
           <div className="welcome-header">
