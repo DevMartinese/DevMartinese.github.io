@@ -21,6 +21,7 @@ const usefulLinks = [
   { name: 'Chess Puzzle Configurator', url: 'https://inquisitive-semifreddo-af9fd5.netlify.app/', emoji: '♟️' },
   { name: 'Game Jam Project - Paisanos', url: 'https://peppy-cat-710a5b.netlify.app/', emoji: '🎮' },
   { name: 'Chess960 Puzzle Configurator', url: 'https://6841dd863cc8df0077449491--cheery-croquembouche-cebcfc.netlify.app/', emoji: '♞' },
+  { name: 'Abstract + Strategy = Abstractegy [WIP]', url: 'https://lucky-alpaca-c8cac1.netlify.app/', emoji: '🎲' },
 ];
 
 const LinkIcon = () => (
