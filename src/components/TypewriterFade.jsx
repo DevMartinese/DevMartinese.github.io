@@ -19,28 +19,6 @@ const TypewriterFade = ({ text, delay = 0.10, className = "" }) => {
           {char === " " ? "\u00A0" : char}
         </motion.span>
       ))}
-      {/* Cursor parpadeante */}
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0, 1, 1, 0] }}
-        transition={{
-          delay: text.length * delay + 0.2,
-          duration: 1,
-          repeat: Infinity,
-          repeatType: "loop",
-          ease: "linear"
-        }}
-        style={{
-          display: "inline-block",
-          marginLeft: 2,
-          verticalAlign: "middle",
-          fontFamily: "inherit",
-          fontSize: "inherit",
-          lineHeight: "inherit"
-        }}
-      >
-        |
-      </motion.span>
     </span>
   );
 };
