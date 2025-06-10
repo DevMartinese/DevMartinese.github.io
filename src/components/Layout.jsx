@@ -77,9 +77,9 @@ function ProfileCard() {
         <div className="profile-card-info">
           <AnimatedPhotoTitles />
           <div className="profile-socials">
-            <a href="https://github.com/usuario" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
-            <a href="https://instagram.com/usuario" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
-            <a href="https://linkedin.com/in/usuario" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+            <a href="https://github.com/DevMartinese" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
+            <a href="https://www.instagram.com/gonzalo.martinese/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
+            <a href="https://www.linkedin.com/in/gonzamartinesse/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
           </div>
         </div>
       </div>
