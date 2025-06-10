@@ -1,8 +1,11 @@
 import './Layout.css';
 import { Outlet } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import LanguageSelector from './LanguageSelector';
 import TypewriterFade from './TypewriterFade';
+import blackImg from '../assets/black.jpeg';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const translations = {
   es: {
@@ -30,6 +33,60 @@ const LinkIcon = () => (
   </svg>
 );
 
+const titles = [
+  'FRONT-END DEVELOPER',
+  'BACK-END DEVELOPER',
+  'PROMPT-END DEVELOPER (?'
+];
+
+function AnimatedPhotoTitles() {
+  const [titleIndex, setTitleIndex] = useState(0);
+
+  useEffect(() => {
+    if (titleIndex < titles.length - 1) {
+      const timeout = setTimeout(() => {
+        setTitleIndex((prev) => prev + 1);
+      }, 2200); // Pausa visible
+      return () => clearTimeout(timeout);
+    }
+  }, [titleIndex]);
+
+  return (
+    <div className="animated-photo-titles-card">
+      <AnimatePresence mode="wait">
+        <motion.div
+        style={{fontSize: 'small'}}
+          key={titles[titleIndex]}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -30 }}
+          transition={{ duration: 0.7, ease: 'easeInOut' }}
+        >
+          {titles[titleIndex]}
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
+}
+
+function ProfileCard() {
+  return (
+    <div className="profile-card">
+      <div className="profile-card-row">
+        <img src={blackImg} alt="Foto de perfil" className="profile-photo large" />
+        <div className="profile-card-info">
+          <AnimatedPhotoTitles />
+          <div className="profile-socials">
+            <a href="https://github.com/usuario" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
+            <a href="https://instagram.com/usuario" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
+            <a href="https://linkedin.com/in/usuario" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const Layout = () => {
   const [language, setLanguage] = useState('en');
 
@@ -39,6 +96,7 @@ const Layout = () => {
         <div className="logo-box">
           <TypewriterFade text="DEVMARTINESE" className="logo-text-brutal" />
         </div>
+      <ProfileCard />
         <div className="welcome-card">
           <div className="welcome-header">
             <p className="welcome-main">{translations[language].welcome}</p>
